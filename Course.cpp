@@ -24,6 +24,34 @@ Course::Course(const Course &obj) {
     *mark = *obj.mark;
     name = obj.name;
 }
+
+string Course::getName() {
+    return name;
+}
+
+double Course::getMark() {
+    return *mark;
+}
+
+int Course::getUnit() {
+    return unit;
+}
+
+void Course::setName(string _name) {
+    name = _name;
+}
+
+void Course::setMark(double _mark) {
+    if (mark == NULL)
+    {
+        mark = new double ;
+    }
+    *mark = _mark;
+}
+
+void Course::setUnit(int _unit) {
+    unit = _unit;
+}
 ostream& operator << (ostream &cout, const Course course) {
     cout <<"Name : "<< course.name << endl <<"Unit : "<< course.unit << endl <<"Mark : "<< *course.mark << endl;
     return cout;
